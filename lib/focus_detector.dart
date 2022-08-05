@@ -51,7 +51,7 @@ class _FocusDetectorState extends State<FocusDetector>
 
   @override
   void initState() {
-    WidgetsBinding.instance?.addObserver(this);
+    _ambiguate(WidgetsBinding.instance)?.addObserver(this);
     super.initState();
   }
 
@@ -159,7 +159,7 @@ class _FocusDetectorState extends State<FocusDetector>
 
   @override
   void dispose() {
-    WidgetsBinding.instance?.removeObserver(this);
+    _ambiguate(WidgetsBinding.instance)?.removeObserver(this);
     super.dispose();
   }
 }
